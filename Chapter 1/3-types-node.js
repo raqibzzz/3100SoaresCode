@@ -21,6 +21,7 @@ var a = 'Javascript';//This is also a String
 var b = true; //This is a Boolean type
 
 console.log('1 Numbers: %d, %d', x, y);
+console.log(`1 Numbers: ${x}, ${y}`);
 console.log('2 My string variable value is %s', z);
 console.log('3 My boolean value is %s', b);
 

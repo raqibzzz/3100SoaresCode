@@ -6,13 +6,15 @@
     This short script shows the main differences between 
     var and let.
 */
-
+console.log(v1)
 var v1 = "variable 1";
 let v2 = "variable 2";
   
 console.log('1', v1, v2); // here both v1 and v2 are accessible
+
   
 {   
+    console.log('1', v1, v2); // here both v1 and v2 are accessible
     console.log('2', v3); //v3 exists, but it is undefined    
     var v3 = "variable 3"
     let v4 = "variable 4";

@@ -37,10 +37,49 @@ function fDeclaration() {
     console.log("4 Hi, I'm a function declaration!");
 }
  
-fExpression(); // Uncaught TypeError: undefined is not a function
-var fExpression = function() {
-    console.log("5 Hi, I'm a function expression!");
-};
+// Comment lines 41-44 to see the next example
+// fExpression(); // Uncaught TypeError: undefined is not a function
+// var fExpression = function() {
+//     console.log("5 Hi, I'm a function expression!");
+// }; 
 // As you can see in the above example, the function expression threw an 
 // exception when it was invoked before it is defined, but the function declaration executed successfully.
 
+
+// Arrow functions
+// function expression
+const square = function (a) {
+    return a * a;
+};
+// first arrow function
+const squareArrow = (a) => {
+    return a * a;
+};
+// simple arrow function
+const squareArrowSimple = (a) => a * a;
+
+console.log('6 - '+square(3));
+console.log('7 - '+squareArrow(3));
+console.log('8 - '+squareArrowSimple(3));
+
+// An example of the main difference between regular
+// functions and arrow functions
+this.variable = 22;
+let anObject = { 
+    variable: "Object Level Variable", 
+    arrowFunction: () => {
+        console.log('9 - '+this.variable); //undefined
+    },
+    regularFunction(){ 
+        console.log('10 - '+this.variable); 
+    }, 
+    regFunction(){ 
+        var aFunc = () => {
+            console.log('11 - '+this.variable); 
+        }
+        aFunc();        
+    }
+};
+anObject.arrowFunction(); 
+anObject.regularFunction();
+anObject.regFunction();

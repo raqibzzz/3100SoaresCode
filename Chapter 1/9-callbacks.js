@@ -21,3 +21,11 @@ var other_func = function(c){
 var res = f1(0, other_func);
 
 console.log(res);
+
+f1(1, function(c){
+    setTimeout(function(){
+        console.log('Hello there! my value is '+c)
+    }, 2000);
+    console.log('I will write c first here '+c);
+});
+console.log('I will be executed first');
